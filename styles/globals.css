@@ -1,0 +1,116 @@
+/* Reset & global styles */
+
+:root {
+  --bkg_body: #ffffff;
+  --color_general: #ffffff;
+  --color_hover: #E0BC64;
+  --title-background: #E0BC64;
+  --bkg_navbar: #000000;
+  --color_btn_cart_hover: #e0bc65;
+  --font-general: 'Lato', sans-serif;
+  --fs-general: 13px;
+}
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff; /* main background */
+  color: #000000;
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  padding-top: 90px;
+  
+
+}
+
+@media(max-width:768px){
+  html,body{
+    padding-top: 34px;
+  }
+}
+
+input,textarea,select,button {
+  font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+
+
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.element, .navbar, .card {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Theme colors */
+:root {
+  --primary-color: #000000; /* black */
+  --secondary-color: #ffffff; /* white */
+  --accent-color: #d4af37; /* gold */
+  --button-hover: #d4af37; /* gold hover */
+}
+
+/* Scrollable horizontal categories bar */
+.categories-bar {
+  display: flex;
+  overflow-x: auto;
+  gap: 45px;
+  padding: 45px 0;
+}
+
+.categories-bar::-webkit-scrollbar {
+  display: none; /* hide scrollbar */
+}
+
+/* Mobile hide element */
+.mobile-hidden {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+/* Mobile only */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+

@@ -1,0 +1,233 @@
+.offersSection {
+  padding: 30px 20px;
+  background: #fff;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 60px;
+  color:#E0BC64;
+}
+
+.categoryGroup {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.categoryTitle {
+  font-size: 1.8rem;
+  text-transform:uppercase;
+  font-weight: 500;
+  color:#E0BC64;
+}
+
+.viewMoreBtn {
+  padding: 6px 12px;
+  background: #111;
+  color: #E0BC64;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.viewMoreBtn:hover {
+  background: #333;
+}
+
+.offersSwiper {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+  transition: none;
+}
+
+.offersSwiper::-webkit-scrollbar {
+  display: none;
+}
+
+.offerCard {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.offerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 318px; /* bigger image */
+}
+
+.offerDetails {
+  padding: 12px;
+  text-align: center;
+}
+
+.offerName {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 8px 0 6px;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.95rem;
+}
+
+.newPrice {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.discountBadge {
+  background: #E0BC64;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-weight: 600;
+ 
+}
+
+.addToCartBtn {
+  display: none;
+   position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color: #E0BC64;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border: none;
+  transition: bottom 0.3s ease;
+
+  
+}
+
+
+.addToCartBtn:hover {
+bottom:0;
+}
+
+.offerCard:hover .addToCartBtn {
+  display: block;
+}
+
+.offersSwiper {
+  padding-bottom: 40px;
+  position: relative;
+  cursor: grab; /* Desktop drag cursor */
+}
+
+.offersSwiper:active {
+  cursor:grabbing;
+}
+
+/* Top arrows for desktop only */
+@media (min-width: 780px) {
+  /* Top navigation arrows - desktop only */
+.topNavArrow {
+  position: absolute;
+  top: -20px; /* above the slider */
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.topNavArrow:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.swiper-button-prev-top {
+  left: 10px;
+}
+
+.swiper-button-next-top {
+  right: 10px;
+}
+
+
+
+
+  .topNavArrow::after {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+
+  .imageWrapper {
+    height: 265px;
+  }
+
+  .offersSwiper {
+    padding-bottom: 20px;
+   
+  }
+
+  .topNavArrow {
+    display:none;
+}
+
+.addToCartBtn{
+    display: block;
+    position:relative;
+    bottom:0;
+    margin:10px 0 0;
+    width:100%;
+    border-radius:6px;
+    padding: 12px 0;
+    font-size: 14px;
+}
+
+.card:hover .addToCartBtn{
+    bottom:0;
+}
+}

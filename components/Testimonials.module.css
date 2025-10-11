@@ -1,0 +1,85 @@
+.testimonialsSection {
+  padding: 70px 20px;
+  background: linear-gradient(180deg, #f9f7f3 0%, #f3f1ec 100%);
+  text-align: center;
+  overflow: hidden;
+  
+}
+
+.title {
+
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E0BC64;
+  margin-top: -20px;
+  margin-bottom: 45px;
+  letter-spacing: 0.5px;
+}
+
+.slider {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: auto 0 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding: 35px 25px;
+  text-align: left;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.icon {
+  font-size: 20px;
+  color: #E0BC64;
+  margin-bottom: 15px;
+}
+
+.text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+.name {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Make it prettier on mobile */
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 80%;
+    padding: 28px 20px;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .text {
+    font-size:14.5px;
+}
+}

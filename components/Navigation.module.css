@@ -1,0 +1,1037 @@
+/* Wrap desktop + mobile nav for scroll hide/show */
+.navWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000; /* higher than all menus */
+  will-change: transform;
+  
+  
+}
+
+.navWrapper.hide{
+  transform:translateY(-100%);
+  opacity:0;
+}
+
+.navWrapper.show{
+   transform:translateY(0);
+  opacity:1;
+
+}
+
+
+/* --- Desktop-specific styles --- */
+
+
+@media (max-width: 1000px) {
+  .desktopNav {
+    display: none;
+    overflow: visible !important;
+    position:relative;
+  }
+}
+
+.desktopNav {
+  display: block;
+}
+
+.mobileNav {
+  display: none;
+}
+
+.searchWrapper {
+  flex-grow: 1;
+  position: relative;
+  max-width: 665px;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1000;
+  left: -308px;
+  align-items: center;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 6px 15px;
+
+}
+
+.searchWrapper:focus-within {
+  border-color: #999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+}
+
+.searchWrapper input {
+  flex:1;
+  border:none;
+  width: 100%;
+  padding: 8px 15px 8px 40px;
+  border-radius: 20px;
+  outline:none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 16px;
+  -webkit-text-size-adjust:100%;
+  background: #fff;
+  color:#333;
+  
+}
+
+.searchWrapper input::placeholder {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #232323;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 100px  ;
+  opacity: 0.8;
+}
+.searchIcon:hover {
+  color: #E0BC64;
+}
+
+
+/* Desktop search suggestions */
+.desktopSearchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.desktopSuggestionsDropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  max-height: 300px; /* allow scrolling if too many items */
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 2000;
+  padding: 10px 0;
+}
+
+.desktopSuggestionsDropdown li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.desktopSuggestionsDropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.desktopSuggestionsDropdown li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.suggestionsDropdown {
+  top:90%;
+  left:0;
+  position: absolute !important;
+  background-color: #fff;
+  border: 1px solid #eee;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  list-style: none;
+  z-index: 9999;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.suggestionsDropdown li {
+  list-style: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  color:#000000;
+  transition: background 0.2s;
+}
+
+.suggestionsDropdown li:hover {
+  color: #E0BC64;
+  text-decoration: underline;
+}
+
+.mainNavbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.3rem 1rem;
+  /* Adjusted padding to match the size */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+ */
+  font-family: var(--fm_general);
+  font-size: var(--fs_general);
+  font-weight: 300;
+  height: 83px;
+  overflow: visible !important;
+
+}
+
+
+
+
+.topBar {
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 13px;
+  padding: 8px 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+
+.topBarContent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topBarLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.topBarLinks a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.topBarLinks a:hover {
+  color: var(--accent-color);
+}
+
+
+.logo {
+  
+  flex-grow: 1;
+  
+}
+
+.logoImage {
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+  margin-top: -20px;
+  
+  
+}
+
+.searchBar {
+  position: absolute;
+  /* Change to absolute */
+  left: 50%;
+  /* Position at the horizontal center */
+  transform: translateX(-50%);
+  /* Pull back by half its width to truly center it */
+  max-width: 650px;
+  width: 100%;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 8px 15px 8px 35px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+
+.rightNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.rightNav a {
+  color: #fff;
+  transition: color 0.3s;
+  display: flex;
+  /* Makes the link a flex container */
+  align-items: center;
+  /* Aligns items vertically */
+  gap: 10px;
+  /* Adds space between icon and text */
+}
+
+
+.rightNav a:hover {
+  color: var(--accent-color);
+}
+
+.cartIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  left:-15px;
+}
+
+.cartBadge {
+  position:absolute;
+  top: -14px;
+  right: -20px;
+  background-color: #d4af37; /* your gold color */
+  color: black;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 6px;
+  min-width: 18px;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartText {
+  font-size: 1rem;
+}
+
+
+.cartText {
+  font-size: 20px;
+  /* Adjust as needed for size */
+  font-weight: 500;
+  transform: translateY(-1px);
+  /* Moves the text up */
+}
+
+.cartCount {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.categoriesBar {
+  background-color: #f0f0f0;
+  /*   border-top: 1px solid rgba(0, 0, 0, 0.1);
+ */
+  flex: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+
+  padding: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  display: flex;
+  unicode-bidi: isolate;
+  justify-content: first baseline;
+  gap: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 65px;
+  left: auto;
+  top: -2.7px;
+
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgb(240, 240, 240);
+
+  /* allow dropdown to overflow */
+  position: relative;
+  /* so absolute dropdown stays inside */
+  box-sizing: border-box;
+
+
+}
+
+.categoryItem {
+  position: relative;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 10px;
+  cursor: pointer;
+  line-height: 1.55em;
+  top: -8px;
+  left: -10px;
+  color:#c41717;
+}
+
+.categoryItem a {
+  color: #8b2727;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: color 0.2s ease-in-out;
+
+}
+
+.categoryItem a:hover {
+  color: #6a1b9a;
+  /* This is a placeholder for a rich purple color */
+}
+
+.categoriesBar a {
+  color: #ad1e1e;
+  text-decoration: none;
+  font-weight: 300;
+  white-space: wrap;
+  transition: color 0.3s;
+}
+
+.categoriesBar a:hover {
+  color: var(--accent-color);
+}
+
+/* Styling for the simple dropdown */
+/* .subcategoriesDropdown {
+  display:contents;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  padding: 10px 0;
+  border-radius: 5px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.subcategoriesDropdown a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.subcategoriesDropdown a:hover {
+  background-color: #f1f1f1;
+} */
+
+/* Styling for the new mega menu */
+/* --- Mega Menu Dropdown --- */
+/* Mega Menu Container */
+/* Hide dropdown by default */
+/* Hide dropdown by default */
+/* MegaMenu Dropdown */
+/* /components/Navigation.module.css */
+
+/* --- Add or Modify these Mega Menu Styles --- */
+
+.megaMenuDropdown {
+  position: absolute;
+  top: 120%; /* Position right below the category bar */
+  left: -10px;
+  width:auto; /* Make the container wide enough for its content */
+  height: auto;
+  background: #f0f0f0;
+  display: none; /* Hidden by default */
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1px; /* Space between columns */
+  border-top: 2.5px solid var(--accent-color, #E0BC64); /* Optional: adds a nice accent */
+}
+
+.showDropdown {
+  display: grid !important; /* Use !important to override other display properties */
+}
+
+.megaMenuColumn {
+  display: grid;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start of the column */
+}
+
+
+
+
+
+
+
+
+/* NEW: Style for the list of links within a column */
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Space between links */
+}
+
+.linksList a {
+  font-size: 20px;
+  color: #5d5d5d;
+  text-transform: capitalize;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+
+
+
+/* Columns inside Mega Menu */
+.megaMenuDropdownContent {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: normal;
+  align-items: normal;
+  gap: 10px;
+  /* spacing between columns */
+  width: auto;
+  height: auto;
+  background-color: #fff;
+
+
+
+
+
+
+}
+
+
+/*titles: by origin*/
+.megaMenuColumn>a {
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #000000;
+  display: block;
+  margin-bottom: 1px;
+  align-items: center;
+
+}
+
+.megaMenuColumn>a:hover {
+  color: #E0BC64;
+  /* highlight color */
+  text-decoration: underline;
+}
+
+
+
+.megaMenuColumn ul {
+  list-style: none;
+  list-style-position: initial;
+  list-style-image: initial;
+  list-style-type: none;
+
+  padding: 0px;
+  margin: 15px;
+  
+}
+
+.megaMenuColumn ul li {
+  margin: 0px 0px;
+  text-align: -webkit-match-parent;
+}
+
+.megaMenuColumn ul li a {
+  color: #5d5d5d;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.megaMenuColumn ul li a:hover {
+  color: #E0BC64;
+  /* highlight color */
+  text-decoration: underline;
+}
+
+/* Normal dropdown (non-mega menu) */
+.subcategoriesDropdown {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 200%;
+  background: #f0f0f0;
+  display: none;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  flex-wrap: wrap;
+  
+  height: auto;
+  border-top: 3px solid var(--accent-color, #E0BC64); /* Optional: adds a nice accent */
+  animation: fadeIn 0.3s ease-in-out;
+  
+  
+  
+
+}
+
+.subcategoriesDropdown a {
+  color: #5d5d5d;
+  text-decoration: none;
+  display: block;
+  padding: 10px 18px;
+  font-size: 15.5px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+
+.subcategoriesDropdown.showDropdown {
+  display: block;
+}
+
+.subcategoriesDropdown:hover {
+color: #E0BC64;text-decoration: underline;
+
+}
+.categoryItem {
+  position: relative;
+  padding: 10px 15px;
+}
+
+.categoryItem>a {
+  font-weight: 600;
+  color: #383838;
+  text-decoration: none;
+  font-size: 13.5px;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+
+}
+
+.categoryItem>a:hover {
+  color: #E0BC64;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Mobile-specific styles --- */
+@media (max-width: 800px) {
+  .desktopNav {
+    display: none;
+    
+  }
+
+  .mobileNav {
+    display: block;
+  }
+
+  .mobileNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    height: 69px;
+  }
+
+  .fakeBottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: env(safe-area-inset-bottom, 200px);
+  background-color: #fff !important;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+
+  .hamburger {
+    color: #E0BC64;
+    cursor: pointer;
+  }
+
+  .mobileLogo {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .mobileLogoImage {
+    width: 150px;
+    height: 47px;
+  }
+
+  .mobileCartIcon {
+    color: #E0BC64;
+    position: relative;
+  }
+
+  /* Styling for the mobile menu header */
+  .mobileMenuHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000000;
+    border-bottom: 1px solid #3f3f3f;
+  }
+
+  .closeButton {
+    font-size: 0.8rem;
+    font-weight: 100;
+    cursor: pointer;
+    color: #E0BC64;
+  }
+
+  .menuTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E0BC64;
+  }
+
+  /* Ensure the mobile menu has full width */
+  /* Styling for the new side panel mobile menu */
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    /* You can adjust this value as needed */
+    max-width: 321px;
+    /* Prevents it from getting too wide on larger screens */
+    height: 100dvh;
+    /* Use 100% of the viewport height */
+    background-color: #fff;
+    background-image: initial !important;
+    background-position-x: initial !important;
+    background-position-y: initial !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+    background-attachment: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
+    background-color: rgb(255, 255, 255) !important;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(15, 15, 15, 0.2);
+    padding-bottom: env(safe-area-inset-bottom);
+    /* push behind iPhone toolbar */
+
+  }
+
+  .mobileMenu.show {
+    transform: translateX(0);
+  }
+
+ 
+
+
+
+
+  /* Add a semi-transparent overlay to cover the rest of the page */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(16, 16, 16, 0.5);
+    z-index: 999;
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    /* for Safari support */
+    pointer-events: auto;
+    
+
+  }
+
+  .overlay.show {
+    display: block;
+    opacity: 1;
+  }
+
+  /* The rest of your mobile menu styling can remain the same */
+
+  .mobileMenuLinks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobileMenuLinks li a {
+    display: block;
+    padding: 0.6rem;
+    border-bottom: 1px solid #ffffff;
+    text-decoration: none;
+    color: #706d6d;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+
+  /* .mobileMenuLinks li a:hover {
+  background-color: #000000;
+} */
+
+  .mobileMenu.show {
+    left: 0;
+  }
+
+  .mobileMenu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .mobileMenu ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+
+  .mobileMenu ul li a:hover {
+    color: var(--accent-color);
+  }
+
+  .mobileSearch {
+    position: relative;
+    width: 90%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .mobileSearch input {
+    width: 100%;
+    padding: 8px 15px 8px 35px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 14px;
+  }
+
+  .mobileSearchIcon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #292828;
+  }
+
+  /* Add this to your Navigation.module.css file */
+  .offerLink {
+    color: #E0BC64 !important;
+    /* A deep red, with !important to ensure it overrides other styles */
+    font-weight: 700 !important;
+    /* Make it bold to stand out */
+  }
+
+  /* You might also need to adjust the hover effect */
+  /* .offerLink:hover {
+  background-color: #f9f9f9 !important;
+}
+ */
+  .mobileBottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #fff !important;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mobileNavLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s;
+  }
+
+  .mobileNavLink:hover {
+    color: var(--accent-color);
+  }
+
+ 
+/* /components/Navigation.module.css */
+
+/* --- Add these styles for the new mobile menu --- */
+
+.mobileMenuItem {
+  /* This will be the container for each list item */
+  border-bottom: 1px solid #eee;
+}
+
+.mobileMenuItemHeader {
+  /* This flex container holds the link and the [+] button */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  margin-left: 1rem;
+}
+
+.mobileMenuItemHeader a {
+  flex-grow: 1; /* Allows the link to take up available space */
+  color: #706d6d;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.toggleIcon {
+  /* The [+] and [-] button */
+  cursor: pointer;
+  padding: 10px 15px; /* Makes it easier to tap */
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1;
+}
+
+.mobileSubMenu {
+  /* The nested <ul> for child items */
+  list-style: none;
+  padding-left: 1.5rem; /* Indent sub-items */
+  background-color: #f9f9f9;
+  overflow: hidden;
+  max-height: 1000px; /* Set a large max-height for open state */
+  transition: max-height 0.5s ease-in-out;
+}
+
+/* We override the bottom border for items inside a submenu */
+.mobileSubMenu .mobileMenuItem {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobileSubMenu .mobileMenuItem:last-child {
+  border-bottom: none;
+}
+
+
+
+.suggestionsDropdown {
+  position: absolute !important;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suggestionsDropdown li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestionsDropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Desktop search suggestions */
+.desktopSearchContainer {
+  position: relative;
+  width: 100%;
+}
+
+.desktopSuggestionsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px; /* allow scrolling if too many items */
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 2000;
+  padding: 10px 0;
+}
+
+.desktopSuggestionsDropdown li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.desktopSuggestionsDropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.desktopSuggestionsDropdown li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+
+}
