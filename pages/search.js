@@ -28,7 +28,7 @@ export default function SearchPage() {
 
   return (
     <div className={styles.container}>
-      <h1>Search Results for: "{query}"</h1>
+      <h1>Search Results for: &quot;{query}&quot;</h1>
       {results.length === 0 && <p>No results found.</p>}
       <div className={styles.resultsGrid}>
         {results.map((item) => (
