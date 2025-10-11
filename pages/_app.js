@@ -7,6 +7,10 @@ import { ToastProvider } from "@/context/ToastContext";
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
+    <Head>
+      <link rel="icon" href ="/favicon.ico"/>
+    </Head>
     
     <CartProvider>
       <ToastProvider>
@@ -15,7 +19,7 @@ function MyApp({ Component, pageProps }) {
 {      <AgeVerification />
 }      <Component {...pageProps} />
 </ToastProvider>
-    </CartProvider>
+    </CartProvider></>
   );
 }
 
