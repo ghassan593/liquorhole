@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-      <link rel="icon" href ="/favicon.ico?v=2"/>
+      <link rel="icon" href ="/favicon1.ico?v=2"/>
     </Head>
     
     <CartProvider>
