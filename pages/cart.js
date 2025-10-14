@@ -42,7 +42,7 @@ export default function CartPage() {
      ` 🛒 New Order!\n\nName: ${customer.name}\nPhone: ${customer.phone}\nAddress: ${customer.address}\nNotes: ${customer.notes || "None"}\n\nItems:\n${itemsText}\n\nTotal: $${getTotal().toFixed(2)}`
     );
 
-    const whatsappUrl = `https://wa.me/96181377374?text=${whatsappMsg}`;
+    const whatsappUrl = `https://wa.me/96181744554?text=${whatsappMsg}`;
     window.open(whatsappUrl, "_blank");
 
     setLoading(true);
