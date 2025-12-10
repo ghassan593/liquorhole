@@ -25,8 +25,8 @@ export default function HeroSection() {
 
   const slides = [
     {
-      desktop: "/Ads/desktopAd1.jpg",
-      mobile: "/Ads/mobileAd1.jpg",
+      desktop: "/Ads/pic1.jpg",
+      mobile: "/Ads/pic1.jpg",
       alt: "Promo 1",
       title: "Whisky Lovers Special",
       subtitle: "Discover premium blends and exclusive offers.",
@@ -34,8 +34,8 @@ export default function HeroSection() {
       link: "/product/jack-daniels-old-no7",
     },
     {
-      desktop: "/Ads/desktopAd2.jpg",
-      mobile: "/Ads/mobileAd2.jpg",
+      desktop: "/Ads/pic2.jpg",
+      mobile: "/Ads/pic2.jpg",
       alt: "Promo 2",
       title: "Limited Edition Wines",
       subtitle: "Only for true connoisseurs. Don’t miss out.",
@@ -43,8 +43,8 @@ export default function HeroSection() {
       link: "/product/jack-daniels-old-no7",
     },
     {
-      desktop: "/Ads/desktopAd3.jpg",
-      mobile: "/Ads/mobileAd3.jpg",
+      desktop: "/Ads/pic3.jpg",
+      mobile: "/Ads/pic3.jpg",
       alt: "Promo 3",
       title: "New Arrivals Every Week",
       subtitle: "Check our latest craft spirits and offers.",
