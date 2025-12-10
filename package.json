@@ -15,7 +15,7 @@
     "jsonwebtoken": "^9.0.2",
     "loadash": "^1.0.0",
     "lodash": "^4.17.21",
-    "next": "15.5.3",
+    "next": "15.5.7",
     "nodemailer": "^7.0.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
