@@ -9,10 +9,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-
-
-
-
 export default function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,28 +24,25 @@ export default function HeroSection() {
       desktop: "/Ads/pic1.jpg",
       mobile: "/Ads/pic1.jpg",
       alt: "Promo 1",
-      title: "Whisky Lovers Special",
-      subtitle: "Discover premium blends and exclusive offers.",
-      cta: "Shop Now",
-      link: "/product/jack-daniels-old-no7",
+      title: "Check out Ireland's oldest licensed whiskey",
+      //subtitle: "Discover premium blends and exclusive offers.",
+      link: "/product/bushmills-original",
     },
     {
       desktop: "/Ads/pic2.jpg",
       mobile: "/Ads/pic2.jpg",
       alt: "Promo 2",
-      title: "Limited Edition Wines",
-      subtitle: "Only for true connoisseurs. Don’t miss out.",
-      cta: "Explore",
-      link: "/product/jack-daniels-old-no7",
+      title: "56 reasons to drink jagermeister today",
+      //subtitle: "Only for true connoisseurs. Don’t miss out.",
+      link: "/product/Jagermeister",
     },
     {
       desktop: "/Ads/pic3.jpg",
       mobile: "/Ads/pic3.jpg",
       alt: "Promo 3",
-      title: "New Arrivals Every Week",
-      subtitle: "Check our latest craft spirits and offers.",
-      cta: "Browse Now",
-      link: "/product/jack-daniels-old-no7",
+      title: "Christmas isn't the same without Bailey's",
+      //subtitle: "Check our latest craft spirits and offers.",
+      link: "/product/baileys-original",
     },
   ];
 
@@ -65,35 +58,30 @@ export default function HeroSection() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className={styles.imageContainer}>
-              <Image
-                src={isMobile ? slide.mobile : slide.desktop}
-                alt={slide.alt}
-                fill
-                priority={index === 0}
-                className={styles.image}
-              />
+            {/* 🔥 Whole slide is clickable */}
+            <Link href={slide.link} className={styles.slideLink}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={isMobile ? slide.mobile : slide.desktop}
+                  alt={slide.alt}
+                  fill
+                  priority={index === 0}
+                  className={styles.image}
+                />
 
-              {/* Overlay gradient for better text visibility */}
-              <div className={styles.overlay}></div>
+                {/* Overlay gradient */}
+                <div className={styles.overlay}></div>
 
-              {/* Text content */}
-              <div className={styles.textOverlay}>
-                <h2 className={styles.title}>{slide.title}</h2>
-                <p className={styles.subtitle}>{slide.subtitle}</p>
-                <Link href={slide.link}>
-                  <button className={styles.ctaButton}>{slide.cta}</button>
-                </Link>
+                {/* Text content (still visible, but no button) */}
+                <div className={styles.textOverlay}>
+                  <h2 className={styles.title}>{slide.title}</h2>
+                  <p className={styles.subtitle}>{slide.subtitle}</p>
+                </div>
               </div>
-              
-            </div>
-            
+            </Link>
           </SwiperSlide>
         ))}
-        
       </Swiper>
-      
     </section>
   );
-
 }
